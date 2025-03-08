@@ -1,0 +1,57 @@
+<section *ngIf="!isLoading && weather" class="weather-card">
+    <h2>Прогноз погоды для {{ weather.name }}</h2>
+    <p class="effective-date">Дата: {{ weather.dt * 1000 | date: 'longDate' }}</p>
+  
+    <div class="weather-details">
+      <div class="weather-section">
+        <h3>Температура</h3>
+        <p>
+          <strong>Текущая:</strong>
+          {{ weather.main.temp }}°C
+        </p>
+        <p>
+          <strong>Ощущается как:</strong>
+          {{ weather.main.feels_like }}°C
+        </p>
+        <p>
+          <strong>Минимум:</strong>
+          {{ weather.main.temp_min }}°C
+        </p>
+        <p>
+          <strong>Максимум:</strong>
+          {{ weather.main.temp_max }}°C
+        </p>
+      </div>
+  
+      <div class="weather-section">
+        <h3>Погода</h3>
+        <p>
+          <strong>Состояние:</strong>
+          {{ translateWeather(weather.weather[0].description) }}
+        </p>
+        <p>
+          <strong>Влажность:</strong>
+          {{ weather.main.humidity }}%
+        </p>
+        <p>
+          <strong>Давление:</strong>
+          {{ weather.main.pressure }} hPa
+        </p>
+      </div>
+  
+      <div class="weather-section">
+        <h3>Ветер</h3>
+        <p>
+          <strong>Скорость:</strong>
+          {{ weather.wind.speed }} м/с
+        </p>
+        <p>
+          <strong>Направление:</strong>
+          {{ weather.wind.deg }}°
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  

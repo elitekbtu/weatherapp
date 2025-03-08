@@ -1,0 +1,17 @@
+<div class="search-container">
+    <h2>Поиск местоположения</h2>
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      (input)="onSearchInput($event)"
+      placeholder="Введите полное название места"
+      class="search-input"
+    />
+    <ul *ngIf="locations.length > 0" class="locations-list">
+      <li *ngFor="let location of locations" (click)="selectLocation(location)" class="location-item">
+        {{ location.name }}, {{ location.sys?.country }}
+      </li>
+    </ul>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </div>
+  

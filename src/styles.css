@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --background-color: #f9fafb;
+    --text-color: #1a1a1a;
+    --nav-background: #ffffff;
+    --hover-background: rgba(0, 0, 0, 0.05);
+    --primary-color: #0077b6;
+    --primary-color-dark: #005f8a;
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+    --text-secondary: #666666;
+    --error-color: #ff4d4d;
+    --skeleton-background: #e0e0e0;
+  }
+  
+  .dark-mode {
+    --background-color: #1a1a1a;
+    --text-color: #f9fafb;
+    --nav-background: #2d2d2d;
+    --hover-background: rgba(255, 255, 255, 0.1);
+    --primary-color: #00b4d8;
+    --primary-color-dark: #0099b6;
+    --card-background: #2d2d2d;
+    --border-color: #444444;
+    --text-secondary: #cccccc;
+    --error-color: #ff6666;
+    --skeleton-background: #444444;
+  }
+  
